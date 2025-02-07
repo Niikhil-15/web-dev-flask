@@ -1,0 +1,25 @@
+<div class ="border-bottom row" style="margin-bottom:16px; padding-bottom:8px;">
+  <div class="col-9">
+      <h4 style="color:rgb(120,120,120)">
+    {{sem['title']}}
+      </h4>
+      <div>
+        <b>Subjects:</b>
+        {%for subject in sem['subjects']%}
+        <div style="margin-bottom:5px;">{{subject}}</div>
+  
+        {%endfor%}
+  
+      </div>
+     <div>
+       <b>Labs:</b>
+       {%for lab in sem['labs']%}
+       <div style="margin-bottom:5px;">{{lab}}</div>
+  
+       {%endfor%}
+     </div>
+  </div>
+  <div class="col-3">
+  <button type="button" class="btn btn-primary btn-lg">Download</button>
+  </div>
+</div>
