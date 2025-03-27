@@ -46,9 +46,28 @@ SEM = [{'sem': 1,
       
       ]
 
+YEAR = [1,2,3,4]
+
 @app.route("/")
 def hello_world():
-  return render_template('home.html',sems = SEM ,department = 'Electrical' )
+  return render_template('home.html',sems = SEM, years = YEAR,department = 'Electrical' )
+
+@app.route("/year1")
+def year_1():
+  return render_template('year1.html')
+
+@app.route("/year2")
+def year_2():
+  return render_template('year2.html') 
+
+@app.route("/year3")
+def year_3():
+  return render_template('year3.html')
+
+@app.route("/year4")
+def year_4():
+  return render_template('year4.html')
+
 
 @app.route("/api/SEM")
 def list_sem():
