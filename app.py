@@ -2,59 +2,27 @@ from flask import Flask,render_template,jsonify
 
 app = Flask(__name__)
 
-SEM = [{'sem': 1,
-      'title': 'Sem 1',
-       'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-        'labs':['BEE Lab','Workshop Lab','PPS Lab']
-       },
-       {'sem': 2,
-         'title': 'Sem 2',
-          'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-           'labs':['BEE Lab','Workshop Lab','PPS Lab']
-          },
-       {'sem': 3,
-        'title': 'Sem 3',
-          'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-           'labs':['BEE Lab','Workshop Lab','PPS Lab']
-          },
-       {'sem': 4,
-        'title': 'Sem 4',
-          'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-           'labs':['BEE Lab','Workshop Lab','PPS Lab']
-          },
-       {'sem': 5,
-        'title': 'Sem 5',
-          'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-           'labs':['BEE Lab','Workshop Lab','PPS Lab']
-          },
-       {'sem': 6,
-        'title': 'Sem 6',
-          'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-           'labs':['BEE Lab','Workshop Lab','PPS Lab']
-          },
-       {'sem': 7,
-        'title': 'Sem 7',
-          'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-           'labs':['BEE Lab','Workshop Lab','PPS Lab']
-          },
-       {'sem': 8,
-        'title': 'Sem 8',
-          'subjects':['Physics','BEE','Maths1','Workshop','PPS'],
-           'labs':['BEE Lab','Workshop Lab','PPS Lab']
-          }
-      
-      
-      ]
+DATA = None
+
+SEM = []
 
 YEAR = [1,2,3,4]
 
 @app.route("/")
 def hello_world():
-  return render_template('home.html',sems = SEM, years = YEAR,department = 'Electrical' )
+  return render_template('home.html', years = YEAR,department = 'Electrical' )
 
 @app.route("/year1")
+
+
 def year_1():
+ 
   return render_template('year1.html')
+
+
+
+
+
 
 @app.route("/year2")
 def year_2():
